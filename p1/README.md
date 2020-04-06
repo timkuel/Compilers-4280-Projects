@@ -41,8 +41,7 @@
     * All other characters generate an error
 *  **Identifiers**
     * Begin with a letter and continue with any number of letters or digits
-*  **Keywords**
-    * Reserved, suggested individual tokens
+*  **Keywords** - Reserved, suggested individual tokens
     * **begin**
     * **end**
     * **loop**
