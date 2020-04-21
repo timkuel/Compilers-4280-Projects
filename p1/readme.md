@@ -78,9 +78,9 @@
     * Start with a @ andEndWithWithoutSpaces@
 
 ### **BNF** ###
-*  **(<program> ->   <vars> <block>)**
+*  **\<program\> ->   \<vars\> \<block\>**
     * first(<vars> <block>) = {empty, data, begin}
-*  **(<block>   ->   begin <vars> <stats> end)**
+*  **\<block\>   ->   begin \<vars\> \<stats\> end**
     * first(begin<vars><stats>end) = {begin}
 *  **<vars>    ->   empty | data Identifier =  Integer  .  <vars>**
     * first(empty) = {empty}
