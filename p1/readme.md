@@ -25,7 +25,7 @@
 *  **./scanner**
     * This invocation will take in keyboard input from the user
     * It will continue to do so until the user enters ** Ctrl-D **
-*  **./scanner < 'file.extension'**
+*  **./scanner \< 'file.extension'**
     * This invocation will do the same as above, but redirected from a file
     * All file opening, reading, and error handling gets taken care of by the shell, not the program
 *  **./scanner 'file'**
@@ -54,8 +54,8 @@
     * **data**
 *  **Operators and Delimiters**
     * **=**
-    * **<**
-    * **>**
+    * **\<**
+    * **/>**
     * **==**
     * **:**
     * **+**
@@ -78,55 +78,55 @@
     * Start with a @ andEndWithWithoutSpaces@
 
 ### **BNF** ###
-*  **\<program\> ->   \<vars\> \<block\>**
-    * first(<vars> <block>) = {empty, data, begin}
-*  **\<block\>   ->   begin \<vars\> \<stats\> end**
-    * first(begin<vars><stats>end) = {begin}
-*  **<vars>    ->   empty | data Identifier =  Integer  .  <vars>**
+*  **\<program/> -/>   \<vars/> \<block/>**
+    * first(\<vars/> \<block/>) = {empty, data, begin}
+*  **\<block/>   -/>   begin \<vars/> \<stats/> end**
+    * first(begin\<vars/>\<stats/>end) = {begin}
+*  **\<vars/>    -/>   empty | data Identifier =  Integer  .  \<vars/>**
     * first(empty) = {empty}
-    * first(data Identifier =  Integer  .  <vars>) = {data}
-*  **<expr>    ->   <N> - <expr>  | <N>**
-	* first(- <expr>) = {-} 
-*  **<N>       ->   <A> / <N> | <A> * <N> | <A>**
-	* first(/ <N>) = {/}
-	* first(* <N>) = {*}
-*  **<A>       ->   <M> + <A> | <M>**
-	*first(+ <A>) = {+}
-*  **<M>       ->   * <M> |  <R>**
-	*first(* <M>) = {*}
-*  **<R>       ->   ( <expr> ) | Identifier | Integer**
-	* first( ( <expr> ) ) = {(}
+    * first(data Identifier =  Integer  .  \<vars/>) = {data}
+*  **\<expr/>    -/>   \<N/> - \<expr/>  | \<N/>**
+	* first(- \<expr/>) = {-} 
+*  **\<N/>       -/>   \<A/> / \<N/> | \<A/> * \<N/> | \<A/>**
+	* first(/ \<N/>) = {/}
+	* first(* \<N/>) = {*}
+*  **\<A/>       -/>   \<M/> + \<A/> | \<M/>**
+	*first(+ \<A/>) = {+}
+*  **\<M/>       -/>   * \<M/> |  \<R/>**
+	*first(* \<M/>) = {*}
+*  **\<R/>       -/>   ( \<expr/> ) | Identifier | Integer**
+	* first( ( \<expr/> ) ) = {(}
 	* first(Identifier) = {Identifier}
 	* first(Integer) = {Integer}
-*  **<stats>   ->   <stat>  <mStat>**
-	* first(<stat> <mStat>) = {in, out, begin, iffy, loop, Identifier}
-*  **<mStat>   ->   empty |  <stat>  <mStat>**
+*  **\<stats/>   -/>   \<stat/>  \<mStat/>**
+	* first(\<stat/> \<mStat/>) = {in, out, begin, iffy, loop, Identifier}
+*  **\<mStat/>   -/>   empty |  \<stat/>  \<mStat/>**
 	* first(empty) = {empty}
-	* first(<stat> <mstat>) = {in, out, begin, iffy, loop, Identifier}
-*  **<stat>    ->   <in> .  | <out> .  | <block> | <if> .  | <loop> .  | <assign> .**
-	* first(<in> .) = {in}
-	* first(<out> .) = {out}
-	* first(<block>) = {begin}
-	* first(<if> .) = {iffy}
-	* first(<loop> .) = {loop}
-	* first(<assign> .) = {Identfier}
-*  **<in>      ->   in  Identifier**
+	* first(\<stat/> \<mstat/>) = {in, out, begin, iffy, loop, Identifier}
+*  **\<stat/>    -/>   \<in/> .  | \<out/> .  | \<block/> | \<if/> .  | \<loop/> .  | \<assign/> .**
+	* first(\<in/> .) = {in}
+	* first(\<out/> .) = {out}
+	* first(\<block/>) = {begin}
+	* first(\<if/> .) = {iffy}
+	* first(\<loop/> .) = {loop}
+	* first(\<assign/> .) = {Identfier}
+*  **\<in/>      -/>   in  Identifier**
 	* first(in Identifier) = {in}
-*  **<out>     ->   out <expr>**
-	* first(out <expr>) = {out}
-*  **<if>      ->   iffy [ <expr> <RO> <expr> ] then <stat>**
-	* first(iffy [ <expr> <RO> <expr> ] then <stat>) = {iffy}
-*  **<loop>    ->   loop  [ <expr> <RO> <expr> ]  <stat>**
-	* first(loop  [ <expr> <RO> <expr> ]  <stat>) = {loop}
-*  **<assign>  ->   Identifier  = <expr>**
-	* first(Identifier = <expr>) = {Identifier}
-*  **<RO>      ->   < | <  <  (two tokens >)  | >  | >  > (two tokens) |  == (one token ==) |   <  >    (two tokens)**
-	* first(<) = {<}
-	* first(< <) = {<}
-	* first(>) = {>}
-	* first(> >) = {>}
+*  **\<out/>     -/>   out \<expr/>**
+	* first(out \<expr/>) = {out}
+*  **\<if/>      -/>   iffy [ \<expr/> \<RO/> \<expr/> ] then \<stat/>**
+	* first(iffy [ \<expr/> \<RO/> \<expr/> ] then \<stat/>) = {iffy}
+*  **\<loop/>    -/>   loop  [ \<expr/> \<RO/> \<expr/> ]  \<stat/>**
+	* first(loop  [ \<expr/> \<RO/> \<expr/> ]  \<stat/>) = {loop}
+*  **\<assign/>  -/>   Identifier  = \<expr/>**
+	* first(Identifier = \<expr/>) = {Identifier}
+*  **\<RO/>      -/>   \< | \<  \<  (two tokens />)  | />  | />  /> (two tokens) |  == (one token ==) |   \<  />    (two tokens)**
+	* first(\<) = {\<}
+	* first(\< \<) = {\<}
+	* first(/>) = {/>}
+	* first(/> />) = {/>}
 	* first(==) = {==}
-	* first(<>) = {<}
+	* first(\</>) = {\<}
 
 
 
@@ -138,3 +138,4 @@
 *  [Java Package Structure](https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html)
 *  [ASCII Table - Used to locate a Hexidecimal value that did not have a representing character](https://www.eso.org/~ndelmott/ascii.html)
 *  [Converter - Used to check if Hexidecimal value has a representing decimal form](https://www.branah.com/ascii-converter)                                                                                                     
+                                                                                                   
