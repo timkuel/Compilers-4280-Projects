@@ -78,55 +78,71 @@
     * Start with a @ andEndWithWithoutSpaces@
 
 ### **BNF** ###
-*  **\<program/> -/>   \<vars/> \<block/>**
-    * first(\<vars/> \<block/>) = {empty, data, begin}
-*  **\<block/>   -/>   begin \<vars/> \<stats/> end**
-    * first(begin\<vars/>\<stats/>end) = {begin}
-*  **\<vars/>    -/>   empty | data Identifier =  Integer  .  \<vars/>**
+*  **\<program\> ->   \<vars\> \<block\>**
+    * first(\<vars\> \<block\>) = {empty, data, begin}
+    
+*  **\<block\>   ->   begin \<vars\> \<stats\> end**
+    * first(begin\<vars\>\<stats\>end) = {begin}
+    
+*  **\<vars\>    ->   empty | data Identifier =  Integer  .  \<vars\>**
     * first(empty) = {empty}
-    * first(data Identifier =  Integer  .  \<vars/>) = {data}
-*  **\<expr/>    -/>   \<N/> - \<expr/>  | \<N/>**
-	* first(- \<expr/>) = {-} 
-*  **\<N/>       -/>   \<A/> / \<N/> | \<A/> * \<N/> | \<A/>**
-	* first(/ \<N/>) = {/}
-	* first(* \<N/>) = {*}
-*  **\<A/>       -/>   \<M/> + \<A/> | \<M/>**
-	*first(+ \<A/>) = {+}
-*  **\<M/>       -/>   * \<M/> |  \<R/>**
-	*first(* \<M/>) = {*}
-*  **\<R/>       -/>   ( \<expr/> ) | Identifier | Integer**
-	* first( ( \<expr/> ) ) = {(}
-	* first(Identifier) = {Identifier}
-	* first(Integer) = {Integer}
-*  **\<stats/>   -/>   \<stat/>  \<mStat/>**
-	* first(\<stat/> \<mStat/>) = {in, out, begin, iffy, loop, Identifier}
-*  **\<mStat/>   -/>   empty |  \<stat/>  \<mStat/>**
-	* first(empty) = {empty}
-	* first(\<stat/> \<mstat/>) = {in, out, begin, iffy, loop, Identifier}
-*  **\<stat/>    -/>   \<in/> .  | \<out/> .  | \<block/> | \<if/> .  | \<loop/> .  | \<assign/> .**
-	* first(\<in/> .) = {in}
-	* first(\<out/> .) = {out}
-	* first(\<block/>) = {begin}
-	* first(\<if/> .) = {iffy}
-	* first(\<loop/> .) = {loop}
-	* first(\<assign/> .) = {Identfier}
-*  **\<in/>      -/>   in  Identifier**
-	* first(in Identifier) = {in}
-*  **\<out/>     -/>   out \<expr/>**
-	* first(out \<expr/>) = {out}
-*  **\<if/>      -/>   iffy [ \<expr/> \<RO/> \<expr/> ] then \<stat/>**
-	* first(iffy [ \<expr/> \<RO/> \<expr/> ] then \<stat/>) = {iffy}
-*  **\<loop/>    -/>   loop  [ \<expr/> \<RO/> \<expr/> ]  \<stat/>**
-	* first(loop  [ \<expr/> \<RO/> \<expr/> ]  \<stat/>) = {loop}
-*  **\<assign/>  -/>   Identifier  = \<expr/>**
-	* first(Identifier = \<expr/>) = {Identifier}
-*  **\<RO/>      -/>   \< | \<  \<  (two tokens />)  | />  | />  /> (two tokens) |  == (one token ==) |   \<  />    (two tokens)**
-	* first(\<) = {\<}
-	* first(\< \<) = {\<}
-	* first(/>) = {/>}
-	* first(/> />) = {/>}
-	* first(==) = {==}
-	* first(\</>) = {\<}
+    * first(data Identifier =  Integer  .  \<vars\>) = {data}
+    
+*  **\<expr\>    ->   \<N\> - \<expr\>  | \<N\>**
+    * first(- \<expr>\) = {-} 
+    
+*  **\<N\>       ->   \<A\> / \<N\> | \<A\> * \<N\> | \<A\>**
+    * first(/ \<N\>) = {/}
+    * first(* \<N\>) = {*}
+    
+*  **\<A\>       ->   \<M\> + \<A\> | \<M\>**
+    *first(+ \<A\>) = {+}
+    
+*  **\<M\>       ->   * \<M\> |  \<R\>**
+    *first(* <M>) = {*}
+    
+*  **\<R\>       ->   ( \<expr\> ) | Identifier | Integer**
+    * first( ( <\expr\> ) ) = {(}
+    * first(Identifier) = {Identifier}
+    * first(Integer) = {Integer}
+    
+*  **\<stats\>   ->   \<stat\>  \<mStat\>**
+    * first(\<stat\> \<mStat\>) = {in, out, begin, iffy, loop, Identifier}
+    
+*  **\<mStat\>   ->   empty |  \<stat\>  \<mStat\>**
+    * first(empty) = {empty}
+    * first(\<stat\> \<mstat\>) = {in, out, begin, iffy, loop, Identifier}
+    
+*  **\<stat\>    ->   \<in\> .  | \<out\> .  | \<block\> | \<if\> .  | \<loop\> .  | \<assign\> .**
+    * first(\<in\> .) = {in}
+    * first(\<out\> .) = {out}
+    * first(\<block\>) = {begin}
+    * first(\<if\> .) = {iffy}
+    * first(\<loop\> .) = {loop}
+    * first(\<assign\> .) = {Identfier}
+    
+*  **\<in\>      ->   in  Identifier**
+    * first(in Identifier) = {in}
+    
+*  **\<out\>     ->   out \<expr\>**
+    * first(out \<expr\>) = {out}
+    
+*  **\<if\>      ->   iffy [ \<expr\> \<RO\> \<expr\> ] then \<stat\>**
+    * first(iffy [ \<expr\> \<RO>\ \<expr>\ ] then \<stat\>) = {iffy}
+    
+*  **\<loop\>    ->   loop  [ \<expr\> \<RO\> \<expr\> ]  \<stat\>**
+    * first(loop  [ \<expr\> \<RO\> \<expr\> ]  \<stat\>) = {loop}
+    
+*  **\<assign\>  ->   Identifier  = \<expr\>**
+    * first(Identifier = \<expr\>) = {Identifier}
+    
+*  **\<RO\>      ->   < | <  <  (two tokens >)  | >  | >  > (two tokens) |  == (one token ==) |   <  >    (two tokens)**
+    * first(<) = {<}
+    * first(< <) = {<}
+    * first(>) = {>}
+    * first(> >) = {>}
+    * first(==) = {==}
+    * first(<>) = {<}
 
 
 
