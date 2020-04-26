@@ -22,7 +22,7 @@
 
                 To execute the program, from the project root directory type 'make' or 'Make' into the command line.
         This invokes a make file that will comipile all the '.java' programs into '.class' object files.  From there,
-        a script named scanner will need to be executed which will execute the actual java program.  The following will
+        a script named frontEnd will need to be executed which will execute the actual java program.  The following will
 	be some proper invocations of the program:
 
 
@@ -106,7 +106,7 @@
     *first(* <M>) = {*}
     
 *  **\<R\>       ->   ( \<expr\> ) | Identifier | Integer**
-    * first( ( <\expr\> ) ) = {(}
+    * first( ( \<expr\> ) ) = {(}
     * first(Identifier) = {Identifier}
     * first(Integer) = {Integer}
     
@@ -132,7 +132,7 @@
     * first(out \<expr\>) = {out}
     
 *  **\<if\>      ->   iffy [ \<expr\> \<RO\> \<expr\> ] then \<stat\>**
-    * first(iffy [ \<expr\> \<RO>\ \<expr>\ ] then \<stat\>) = {iffy}
+    * first(iffy [ \<expr\> \<RO\> \<expr\> ] then \<stat\>) = {iffy}
     
 *  **\<loop\>    ->   loop  [ \<expr\> \<RO\> \<expr\> ]  \<stat\>**
     * first(loop  [ \<expr\> \<RO\> \<expr\> ]  \<stat\>) = {loop}
