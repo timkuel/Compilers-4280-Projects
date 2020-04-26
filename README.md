@@ -17,3 +17,4 @@
     * Parser for the BNF, generated tree is displayed
 *  **p3**
     * Static Semantics Check
+    * Checks global scope
