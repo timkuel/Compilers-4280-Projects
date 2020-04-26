@@ -132,7 +132,7 @@
     * first(out \<expr\>) = {out}
     
 *  **\<if\>      ->   iffy [ \<expr\> \<RO\> \<expr\> ] then \<stat\>**
-    * first(iffy [ \<expr\> \<RO>\ \<expr>\ ] then \<stat\>) = {iffy}
+    * first(iffy [ \<expr\> \<RO\> \<expr\> ] then \<stat\>) = {iffy}
     
 *  **\<loop\>    ->   loop  [ \<expr\> \<RO\> \<expr\> ]  \<stat\>**
     * first(loop  [ \<expr\> \<RO\> \<expr\> ]  \<stat\>) = {loop}
