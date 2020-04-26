@@ -32,7 +32,7 @@
 
 #### **Resources Used** ####
 *  [Java Makefile](https://www.cs.swarthmore.edu/~newhall/unixhelp/javamakefiles.html)
-*  [Script to Run Compiled Java Class]([https://stackoverflow.com/questions/38064801/writing-a-bash-script-to-run-a-java-program)
+*  [Script to Run Compiled Java Class](https://stackoverflow.com/questions/38064801/writing-a-bash-script-to-run-a-java-program)
 *  [Java How to Detect End of File From Keyboard Input (Ctrl - D)](https://stackoverflow.com/questions/4208502/how-to-determine-when-end-of-file-has-been-reached)
 *  [Java Binary Tree](https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/)
 *  [Java Binary Tree Printing](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/)

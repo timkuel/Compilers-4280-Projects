@@ -41,8 +41,7 @@
     * All other characters generate an error
 *  **Identifiers**
     * Begin with a letter and continue with any number of letters or digits
-*  **Keywords**
-    * Reserved, suggested individual tokens
+*  **Keywords** - Reserved, suggested individual tokens
     * **begin**
     * **end**
     * **loop**
@@ -64,7 +63,7 @@
     * **:**
     * **+**
     * **-**
-    * *****
+    * \*
     * **/**
     * **%**
     * **.**
@@ -84,7 +83,7 @@
 
 #### **Resources Used** ####
 *  [Java Makefile](https://www.cs.swarthmore.edu/~newhall/unixhelp/javamakefiles.html)
-*  [Script to Run Compiled Java Class]([https://stackoverflow.com/questions/38064801/writing-a-bash-script-to-run-a-java-program)
+*  [Script to Run Compiled Java Class](https://stackoverflow.com/questions/38064801/writing-a-bash-script-to-run-a-java-program)
 *  [Java How to Detect End of File From Keyboard Input (Ctrl - D)](https://stackoverflow.com/questions/4208502/how-to-determine-when-end-of-file-has-been-reached)
 *  [Java Package Structure](https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html)
 *  [ASCII Table - Used to locate a Hexidecimal value that did not have a representing character](https://www.eso.org/~ndelmott/ascii.html)
