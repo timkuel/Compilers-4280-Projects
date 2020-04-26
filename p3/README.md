@@ -106,7 +106,7 @@
     *first(* <M>) = {*}
     
 *  **\<R\>       ->   ( \<expr\> ) | Identifier | Integer**
-    * first( ( <\expr\> ) ) = {(}
+    * first( ( \<expr\> ) ) = {(}
     * first(Identifier) = {Identifier}
     * first(Integer) = {Integer}
     
