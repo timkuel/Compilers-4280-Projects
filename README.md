@@ -60,7 +60,7 @@
     * All file opening, reading, and error handling gets taken care of by the program, not the shell
     
       
-    #### **After the target file has been generated** ####
+    ### **After the target file has been generated** ###
         
 *   **./VirtMach 'file'.asm**
      * The file name will be generated based off of whether using keyboard input or file input.
