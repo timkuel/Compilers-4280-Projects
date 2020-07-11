@@ -1,0 +1,8 @@
+@ If: Echo abs val@
+data x = 1 .
+begin
+  in x .
+  iffy [ x < 0 ] then
+    x = * x . .
+  out x .
+end

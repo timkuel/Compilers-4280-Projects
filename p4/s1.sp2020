@@ -1,0 +1,12 @@
+@ Out: Echo 3 inputs in reverse@
+data x = 1 .
+data y = 2 .
+data z = 3 .
+begin
+  in x .
+  in y .
+  in z .
+  out z .
+  out y .
+  out x .
+end

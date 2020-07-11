@@ -1,0 +1,6 @@
+@ In+Out: Echo input@
+data x = 1 .
+begin
+  in x .
+  out x .
+end

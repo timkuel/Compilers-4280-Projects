@@ -1,0 +1,4 @@
+@ Out: Print 1@
+begin
+  out 1 .
+end
